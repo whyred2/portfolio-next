@@ -14,8 +14,8 @@
     --accent-color: #8662f3;
     --accent-color-hover: #8860ffb2;
     
-    --secondary-color: rgba(255, 255, 255, 0.05);
-    --secondary-color-hover: rgba(255, 255, 255, 0.20);
+    --secondary-color: rgba(0, 0, 0, 0.05);
+    --secondary-color-hover: rgba(0, 0, 0, 0.20);
 
     --active-color: #d2224d;
 
@@ -38,8 +38,8 @@
     --background-2: #2e2c35;
     --background-3: #35333e;
 
-    --secondary-color: rgba(0, 0, 0, 0.05);
-    --secondary-color-hover: rgba(0, 0, 0, 0.20);
+    --secondary-color: rgba(255, 255, 255, 0.05);
+    --secondary-color-hover: rgba(255, 255, 255, 0.20);
 
     --text: #ffffff;
   }
@@ -49,5 +49,23 @@
   body {
     @apply bg-background1 text-foreground text-size4;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .icon-wrapper .moon {
+    @apply translate-y-[60px];
+  }
+  
+  .icon-wrapper.light .sun {
+    @apply translate-y-0;
+  }
+  
+  .icon-wrapper.dark .moon {
+    @apply translate-y-0;
+  }
+  
+  .icon-wrapper.dark .sun {
+    @apply translate-y-[-60px];
   }
 }

@@ -1,26 +1,34 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { MainNavItem } from "@/types";
+import { HeaderItem, NavigationItem } from '@/components/ui/header-items';
+
+import { ThemeSwitcher } from './theme-switcher';
+import LanguageSwitcher from './language-switcher';
 
 interface MainNavProps {
     items?: MainNavItem[]
 }
 
 export function Header({ items }: MainNavProps) {
+    const t = useTranslations('HeaderItemNav'); 
+
     return(
-        <header className='container h-10'>
+        <header className='container flex justify-between p-5'>
             {items?.length ? (
-                <div>
+                <HeaderItem className='gap-5'>
                     {items?.map((item, index) => (
-                        <Link
+                        <NavigationItem
                             key={index}
-                            href={item.href}
                         >
-                            {item.title}asd
-                        </Link>
+                            {t(item.titleKey)} 
+                        </NavigationItem>
                     ))}
-                </div>
+                </HeaderItem>
             ) : ( null )}
+            <LanguageSwitcher />
+            <ThemeSwitcher />
         </header>
     )
 }

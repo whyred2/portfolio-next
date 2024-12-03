@@ -1,16 +1,43 @@
 'use client';
 
-import { useTheme } from 'next-themes';
+import React, { useState, useEffect } from 'react';
+import { useTheme } from "next-themes";
 
-export default function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+import { HeaderItem, NavigationItem } from '@/components/ui/header-items';
+import { Icons } from '@/components/icons';
 
-  return (
-    <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded bg-accent text-white absolute bottom-[20px] left-[20px]"
-    >
-      {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
-    </button>
-  );
+export function ThemeSwitcher() {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+
+    if (!mounted) {
+        return (
+            <HeaderItem>
+                <div className="animate-pulse w-10 h-10 rounded-full bg-secondary" />
+            </HeaderItem>
+        );
+    }
+
+    return (
+        <HeaderItem>
+            <NavigationItem 
+                onClick={toggleTheme} 
+                className={`
+                    icon-wrapper relative
+                    ${theme === 'dark' ? 'dark' : 'light'}
+                `}
+            >
+                <Icons.sun className='sun absolute transition-transform	duration-300' size={24} />
+                <Icons.moon className='moon absolute transition-transform duration-300' size={24} />
+            </NavigationItem>
+        </HeaderItem>
+    );
 }
