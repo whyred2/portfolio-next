@@ -4,16 +4,17 @@
 
 @layer base {
   :root {
+    /* Основные переменные для светлой темы */
     --background-1: hsl(0, 0%, 100%);
     --background-2: hsl(0, 0%, 90%);
     --background-3: hsl(0, 0%, 70%);
 
     --base-skeleton-color: #8662f3;
     --highlight-skeleton-color: #ac91ffb2;
-    
+
     --accent-color: #8662f3;
     --accent-color-hover: #8860ffb2;
-    
+
     --secondary-color: rgba(0, 0, 0, 0.05);
     --secondary-color-hover: rgba(0, 0, 0, 0.20);
 
@@ -30,11 +31,12 @@
 
     --error-color: hsl(0, 70%, 50%);
 
-    --radius: 1rem;    
+    --radius: 1rem;
   }
 
   .dark {
-    --background-1: #24222a; 
+    /* Темная тема */
+    --background-1: #24222a;
     --background-2: #2e2c35;
     --background-3: #35333e;
 
@@ -43,9 +45,44 @@
 
     --text: #ffffff;
   }
+
+  [class="new-year"] {
+    /* Новогодняя тема */
+    --background-1: hsl(0, 0%, 0%);
+    --background-2: hsl(223, 20%, 10%);
+    --background-3: hsl(223, 20%, 12%);
+
+    --base-skeleton-color: #287233
+    --highlight-skeleton-color: #34a853;
+
+    --accent-color: #34a853;
+    --accent-color-hover: #3dc15b;
+
+    --secondary-color: rgba(255, 255, 255, 0.05);
+    --secondary-color-hover: rgba(255, 255, 255, 0.20);
+
+    --active-color: #d2224d;
+
+    --text-accent-color: #e0e0e0;
+    --text-color-white: #fff;
+    --text-span: #979797;
+
+    --link-color: #34a853;
+    --link-color-hover: #3dc15b;
+
+    --text: #ffffff;
+
+    --background-xmas: url('/images/bg-xmas-snowflake.png'), url('/images/bg-xmas.jpg');
+  }
 }
 
 @layer base {
+  html.new-year body {
+    @apply bg-bgXmas;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   body {
     @apply bg-background1 text-foreground text-size4;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -56,16 +93,40 @@
   .icon-wrapper .moon {
     @apply translate-y-[60px];
   }
-  
-  .icon-wrapper.light .sun {
-    @apply translate-y-0;
-  }
-  
+    
   .icon-wrapper.dark .moon {
     @apply translate-y-0;
   }
+
+  .icon-wrapper.new-year .moon {
+    @apply translate-y-[-60px];
+  }
   
+
+
+  .icon-wrapper.light .sun {
+    @apply translate-y-0;
+  }
+
   .icon-wrapper.dark .sun {
     @apply translate-y-[-60px];
+  }
+
+  .icon-wrapper.new-year .sun {
+    @apply translate-y-[-60px];
+  }
+  
+
+
+  .icon-wrapper.dark .tree {
+    @apply translate-y-[60px];
+  }
+  
+  .icon-wrapper.light .tree {
+    @apply translate-y-[60px];
+  }
+
+  .icon-wrapper.new-year .tree {
+    @apply translate-y-[0px];
   }
 }

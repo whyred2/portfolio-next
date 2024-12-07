@@ -1,9 +1,80 @@
 {
-    "HeaderItemNav": {
-        "home": "Home",
-        "about": "About Me",
-        "portfolio": "Portfolio",
-        "comments": "Comments"
+    "Header": {
+        "NavItem": {
+            "home": "Home",
+            "about": "About Me",
+            "portfolio": "Portfolio",
+            "comments": "Comments"
+        },
+        "UserMenu": {
+            "Toast": {
+                "success": "Success",
+                "error": "Something went wrong",
+                "Description": {
+                    "successDelete": "Account successfully deleted.",
+                    "error": "Error: ",
+                    "errorDelete": "An error occurred while deleting the account."
+                }
+            },
+            "sign-in": "Sign in",
+            "themes": "Themes",
+            "delete": "Delete account",
+            "deleteConfirm": "Are you sure you want to delete your account? This action is irreversible.",
+            "log-out": "Log out",
+            "light": "Light",
+            "dark": "Dark",
+            "new-year": "New Year"
+        }
+    },
+    "Auth": {
+        "SignIn": {
+            "title": "Sign In",
+            "description": "Sign in to your account.",
+
+            "form-title": "Sign In",
+            "form-description": "Welcome! Please sign in to continue.",
+
+            "no-account": "Don't have an account?",
+            "sign-up": "Sign Up"
+        },
+        "SignUp": {
+            "title": "Sign Up",
+            "description": "To get started, create an account.",
+
+            "form-title": "Create Your Account",
+            "form-description": "Welcome! Please fill in your details to start.",
+
+            "no-account": "Already have an account?",
+            "sign-in": "Sign In"
+        },
+        "Validation": {
+            "invalidEmail": "Invalid email address",
+            "passwordMinLength": "Password must be at least 6 characters",
+            "nameRequired": "Name is required",
+            "confirmPasswordMinLength": "Field must be at least 6 characters",
+            "passwordsDoNotMatch": "Passwords do not match"
+        },
+        "Toast": {
+            "success": "Success",
+            "error": "Something went wrong",
+            "Description": {
+                "signUpSuccess": "Account successfully created!",
+                "signUpError": "Your sign up request failed. Please try again.",
+                "signUpExists": "A user with this email already exists.",
+                "signInSuccess": "You have logged in successfully!",
+                "signInError": "Your sign in request failed. Please try again.",
+                "signInCredentials": "Incorrect login or password. Please try again."
+            }
+        },
+        "google-btn": "Sign in with Google",
+        "sign-up": "Sign Up",
+        "sign-in": "Sign In",
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "confirm-password": "Confirm Password",
+        "back": "Back to Home",
+        "or": "or"
     }
 }
   

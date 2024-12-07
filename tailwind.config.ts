@@ -19,6 +19,9 @@ export default {
         "2xl": "1400px",
       },
     },
+    backgroundImage: {
+      'bgXmas': "var(--background-xmas)",
+    },
     extend: {
       colors: {
         accent: "var(--accent-color)",
@@ -40,7 +43,7 @@ export default {
 
         textSpan: "var(--text-span)",
 
-        errorColor: "var(--error-color)",
+        error: "var(--error-color)",
       },
 
       fontSize: {

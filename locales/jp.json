@@ -1,8 +1,79 @@
 {
-    "HeaderItemNav": {
-        "home": "家",
-        "about": "私について",
-        "portfolio": "ポートフォリオ",
-        "comments": "お問い合わせ"
+    "Header": {
+        "NavItem": {
+            "home": "家",
+            "about": "私について",
+            "portfolio": "ポートフォリオ",
+            "comments": "お問い合わせ"
+        },
+        "UserMenu": {
+            "Toast": {
+                "success": "成功",
+                "error": "何か問題が発生しました",
+                "Description": {
+                    "successDelete": "アカウントは正常に削除されました。",
+                    "error": "エラー: ",
+                    "errorDelete": "アカウントの削除中にエラーが発生しました。"
+                }
+            },
+            "sign-in": "サインイン",
+            "themes": "トピックス",
+            "delete": "アカウントを削除",
+            "deleteConfirm": "アカウントを削除してもよろしいですか?この操作は元に戻すことができません。",
+            "log-out": "ログアウト",
+            "light": "光",
+            "dark": "暗い",
+            "new-year": "新年"
+        }
+    },
+    "Auth": {
+        "SignIn": {
+            "title": "ログイン",
+            "description": "アカウントにログインしてください。",
+
+            "form-title": "ログイン",
+            "form-description": "ようこそ！続行するにはログインしてください。",
+
+            "no-account": "アカウントをお持ちではありませんか？",
+            "sign-up": "登録する"
+        },
+        "SignUp": {
+            "title": "登録する",
+            "description": "始めるには、アカウントを作成してください。",
+
+            "form-title": "アカウントを作成",
+            "form-description": "ようこそ！始めるには詳細を入力してください。",
+
+            "no-account": "すでにアカウントをお持ちですか？",
+            "sign-in": "ログイン"
+        },
+        "Validation": {
+            "invalidEmail": "無効なメール アドレスです",
+            "passwordMinLength": "パスワードは 6 文字以上である必要があります",
+            "nameRequired": "名前は必須です",
+            "confirmPasswordMinLength": "フィールドは 6 文字以上である必要があります",
+            "passwordsDoNotMatch": "パスワードが一致しません"
+        },
+        "Toast": {
+            "success": "成功",
+            "error": "問題が発生しました",
+            "Description": {
+                "signUpSuccess": "アカウントが正常に作成されました!",
+                "signUpError": "サインアップ リクエストが失敗しました。もう一度お試しください。",
+                "signUpExists": "このメール アドレスのユーザーは既に存在します。",
+                "signInSuccess": "ログインに成功しました!",
+                "signInError": "サインイン リクエストが失敗しました。もう一度お試しください。",
+                "signInCredentials": "ログインまたはパスワードが正しくありません。もう一度お試しください。"
+            }
+        },
+        "google-btn": "Googleでログイン",
+        "sign-up": "登録する",
+        "sign-in": "ログイン",
+        "name": "名前",
+        "email": "メール",
+        "password": "パスワード",
+        "confirm-password": "パスワードを確認",
+        "back": "ホームに戻る",
+        "or": "または"
     }
 }
