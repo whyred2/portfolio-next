@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -20,7 +20,7 @@ const SelectTrigger = React.forwardRef<
     ref={ref}
     className={cn(
       "flex items-center justify-between rounded-md bg-secondary",
-      "w-full px-5 py-1 gap-3 disabled:cursor-not-allowed focus:outline-none",
+      "w-full px-5 py-1 gap-2 disabled:cursor-not-allowed focus:outline-none",
       "transition-bg duration-300 hover:bg-secondaryHover active:bg-active active:transition-none",
       className
     )}
@@ -42,8 +42,8 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "bg-background2 rounded-lg z-50 overflow-hidden",
-        position === "popper" && "translate-y-[10px] translate-x-[-10px]",
+        "bg-neutral-200 dark:bg-neutral-800 rounded-lg z-50 overflow-hidden",
+        position === "popper",
         className
       )}
       position={position}

@@ -38,6 +38,7 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
     resolver: zodResolver(isSignUp ? signUpSchema : signInSchema),
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   async function onSubmit(data: SignInFormData | SignUpFormData) {
     setIsLoading(true);
@@ -116,7 +117,13 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
           {isSignUp && (
             <div>
               <Label htmlFor="name">{t("name")}</Label>
-              <Input id="name" placeholder={t("name")} {...register("name")} />
+              <Input
+                id="name"
+                placeholder={t("name")}
+                disabled={isLoading}
+                className={errors.name && "border-error"}
+                {...register("name")}
+              />
               {errors?.name && (
                 <p className="text-size2 text-error">{errors.name.message}</p>
               )}
@@ -128,6 +135,8 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
               id="email"
               placeholder="name@example.com"
               type="email"
+              disabled={isLoading}
+              className={errors.email && "border-error"}
               {...register("email")}
             />
             {errors?.email && (
@@ -136,12 +145,24 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
           </div>
           <div>
             <Label htmlFor="password">{t("password")}</Label>
-            <Input
-              id="password"
-              type="password"
-              placeholder="********"
-              {...register("password")}
-            />
+            <div className="flex gap-3">
+              <Input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="********"
+                disabled={isLoading}
+                className={errors.password && "border-error"}
+                {...register("password")}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className={`h-10 w-10 border-2 border-neutral-500/40 flex flex-none items-center justify-center rounded-md transition-bg 
+                  ${showPassword ? "bg-active text-white" : "bg-input"}`}
+              >
+                {showPassword ? <Icons.eye /> : <Icons.eyeOff />}
+              </button>
+            </div>
             {errors?.password && (
               <p className="text-size2 text-error">{errors.password.message}</p>
             )}
@@ -151,8 +172,10 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
               <Label htmlFor="confirmPassword">{t("confirm-password")}</Label>
               <Input
                 id="confirmPassword"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="********"
+                disabled={isLoading}
+                className={errors.confirmPassword && "border-error"}
                 {...register("confirmPassword")}
               />
               {errors?.confirmPassword && (
@@ -162,7 +185,6 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
               )}
             </div>
           )}
-
           <button
             type="submit"
             disabled={isLoading}

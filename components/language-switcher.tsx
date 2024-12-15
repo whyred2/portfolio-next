@@ -50,6 +50,7 @@ export default function ThemeSwitcher() {
                 src={LANGUAGES.find((lang) => lang.code === locale)?.flag || ""}
                 alt={`${locale} flag`}
                 width={22}
+                className="rounded"
               />
               <span>{locale.toUpperCase()}</span>
             </div>

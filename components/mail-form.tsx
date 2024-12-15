@@ -59,7 +59,7 @@ export function MailForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="backdrop-blur shadow-lg filter-blur border border-border rounded-lg w-5/12 p-5 grid gap-3"
     >
-      <h2>Форму:</h2>
+      <h2 className="">Форму:</h2>
       <div className="grid gap-3">
         <div className="flex gap-3">
           <div className="flex-1">

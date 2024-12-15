@@ -33,6 +33,8 @@ import {
   Music2,
   Asterisk,
   Square,
+  Eye,
+  EyeOffIcon,
   type Icon as LucideIcon,
 } from "lucide-react";
 
@@ -76,6 +78,8 @@ export const Icons = {
   music2: Music2,
   asterisk: Asterisk,
   square: Square,
+  eye: Eye,
+  eyeOff: EyeOffIcon,
 
   telegram: FaTelegramPlane,
   twitter: FaXTwitter,

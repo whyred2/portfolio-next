@@ -4,29 +4,14 @@
 
 @layer base {
   :root {
-    /* Основные переменные для светлой темы */
-    --background-2: hsl(0, 0%, 95%);
-    --background-3: hsl(0, 0%, 85%);
-    --background-4: hsl(0, 0%, 80%);
-
-    --base-skeleton-color: #8662f3;
-    --highlight-skeleton-color: #ac91ffb2;
-
-    --text-accent-color: #2c2c2c;
-
-    --text-color-white: #fff;
-    --text-span: #7e7b88;
-
-    --link-color: #655f76;
-    --link-color-hover: #a59bc2;
-
-
-    --background-1: #f9f9fc; /* Потом сменить на "background" */
+    /* Светлая тема */
+    --background: #f9f9fc;
     --header-background: #ffffffd5;
     --text: #202020;
     --text-subtitle: #5f5f5f;
 
     --border-color: hsla(0, 0%, 100%, 0.6);
+
     --input-color: rgba(0, 0, 0, 0.05);
     --input-border-color: rgba(0, 0, 0, 0.3);
 
@@ -34,9 +19,10 @@
     --accent-color-hover: #6b3ee0;
     --secondary-color: rgba(0, 0, 0, 0.05);
     --secondary-color-hover: rgba(0, 0, 0, 0.20);
+    --link-color: #655f76;
+    --link-color-hover: #a59bc2;
 
     --active-color: #d2224d;
-
     --succes-color: #34d399;
     --error-color: #f87171;
     --warning-color: #fbbf24;
@@ -47,16 +33,19 @@
 
   .dark {
     /* Темная тема */
-    --background-1: hsl(255, 11%, 15%);
-    --background-2: hsl(253, 9%, 19%);
-    --background-3: hsl(251, 10%, 22%);
-    --background-4: hsl(249, 10%, 25%);
+    --background: hsl(0, 0%, 10%);
+    --header-background: hsl(0, 0%, 15%, 0.8);
+    --text: #ffffff;
+    --text-subtitle: #d1d1d1;
+
+    --border-color: hsla(0, 0%, 100%, 0.1);
+
+    --input-color: rgba(255, 255, 255, 0.05);
+    --input-border-color: rgba(255, 255, 255, 0.3);
 
     --secondary-color: rgba(255, 255, 255, 0.05);
     --secondary-color-hover: rgba(255, 255, 255, 0.20);
 
-    --text: #ffffff;
-    --text-accent-color: #c40c0c;
   }
 }
 
@@ -66,6 +55,18 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   body::-webkit-scrollbar {
+    display: none;
+  }
+
+  input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+  }
+
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
+
+  input[type="password"]::-moz-password-field {
     display: none;
   }
 }
@@ -101,40 +102,4 @@
   .btn-outline {
     @apply border-2 border-dashed border-gray-500 text-gray-700 font-medium px-5 py-3 rounded-lg hover:border-solid hover:scale-105 transition-all duration-300;
   }
-  
-  .logo { width: 100px; height: auto; }
-
-  .logo path,
-.logo rect {
-  stroke-dasharray: 200; /* Общая длина пути */
-  stroke-dashoffset: 200; /* Начальный оффсет */
-  animation: draw 1s ease-in-out forwards;
-}
-
-.logo path:nth-child(1),
-.logo rect:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.logo path:nth-child(2),
-.logo rect:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.logo path:nth-child(3),
-.logo rect:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-.logo path:nth-child(4),
-.logo rect:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0; /* Анимация к полному заполнению пути */
-  }
-}
-
 }

@@ -26,24 +26,7 @@ export default {
     },
     extend: {
       colors: {
-        secondary: "var(--secondary-color)",
-        secondaryHover: "var(--secondary-color-hover)",
-        
-        active: "var(--active-color)",
-
-        linkColor: "var(--link-color)",
-        linkColorHover: "var(--link-color-hover)",
-
-        background2: "var(--background-2)",
-        background3: "var(--background-3)",
-        background4: "var(--background-4)",
-
-        textSpan: "var(--text-span)",
-        textAccent: "var(--text-accent-color)",
-
-
-        
-        background: "var(--background-1)",
+        background: "var(--background)",
         headerBg: "var(--header-background)",
         text: "var(--text)",
         textSubtitle: "var(--text-subtitle)",
@@ -54,7 +37,13 @@ export default {
 
         accent: "var(--accent-color)",
         accentHover: "var(--accent-color-hover)",
+        secondary: "var(--secondary-color)",
+        secondaryHover: "var(--secondary-color-hover)",
 
+        linkColor: "var(--link-color)",
+        linkColorHover: "var(--link-color-hover)",
+
+        active: "var(--active-color)",
         success: "var(--succes-color)",
         error: "var(--error-color)",
         warning: "var(--warning-color)",

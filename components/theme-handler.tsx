@@ -10,7 +10,7 @@ export function ThemeHandler() {
     const root = document.documentElement;
 
     // Удаляем все классы темы
-    root.classList.remove("light", "dark", "new-year");
+    root.classList.remove("light", "dark");
 
     // Добавляем текущую тему
     if (theme) {

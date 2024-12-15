@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import gsap from "gsap";
 import { skillsConfig } from "@/config/skills";
