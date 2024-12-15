@@ -6,6 +6,8 @@ import { HeaderItem } from "@/components/ui/header-items";
 import { UserAccountNav } from "@/components/user-account-nav";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import * as React from "react";
 
 interface PagesLayoutProps {
   children?: React.ReactNode;
@@ -15,7 +17,7 @@ export default async function PagesLayout({ children }: PagesLayoutProps) {
   const user = await getCurrentUser();
 
   return (
-    <div className="container">
+    <React.Suspense fallback={<></>}>
       <Header items={navigationConfig.mainNav}>
         <HeaderItem>
           {user ? (
@@ -29,17 +31,18 @@ export default async function PagesLayout({ children }: PagesLayoutProps) {
           ) : (
             <Link
               href="/sign-in"
-              className={buttonVariants({ variant: "default" })}
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "py-1 rounded-md"
+              )}
             >
               Войти
             </Link>
           )}
         </HeaderItem>
       </Header>
-      <main className="flex w-full flex-1 flex-col overflow-hidden">
-        {children}
-      </main>
+      {children}
       <ThemeMusic />
-    </div>
+    </React.Suspense>
   );
 }

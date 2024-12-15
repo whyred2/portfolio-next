@@ -16,8 +16,6 @@ export function ThemeSwitcher() {
 
   const toggleTheme = () => {
     if (theme === "dark") {
-      setTheme("new-year");
-    } else if (theme === "new-year") {
       setTheme("light");
     } else {
       setTheme("dark");
@@ -37,22 +35,16 @@ export function ThemeSwitcher() {
       <NavigationItem
         onClick={toggleTheme}
         className={`
-                    icon-wrapper relative
-                    ${theme === "dark" && "dark"}
-                    ${theme === "light" && "light"}
-                    ${theme === "new-year" && "new-year"}
+                    icon-wrapper relative w-10 h-10
+                    ${theme === "dark" ? "dark" : "light"}
                   `}
       >
         <Icons.sun
-          className="sun absolute transition-transform	duration-300"
+          className="sun absolute transition-transform duration-300"
           size={24}
         />
         <Icons.moon
           className="moon absolute transition-transform duration-300"
-          size={24}
-        />
-        <Icons.tree
-          className="tree absolute transition-transform duration-300"
           size={24}
         />
       </NavigationItem>

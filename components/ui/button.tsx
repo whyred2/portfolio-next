@@ -1,32 +1,34 @@
-import * as React from "react"
-import { VariantProps, cva } from "class-variance-authority"
+import * as React from "react";
+import { VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "flex items-center w-full justify-center rounded-full duration-300 cursor-pointer select-none active:bg-active active:duration-0",
+  "flex items-center justify-center rounded-lg duration-300 cursor-pointer select-none active:bg-active active:duration-0 border-2 active:border-active",
   {
     variants: {
       variant: {
-        default: "bg-accent text-white hover:bg-accentHover",
+        default:
+          "bg-accent text-white hover:bg-accentHover hover:border-accentHover border-accent",
         secondary: "bg-secondary hover:bg-secondaryHover",
-        delete: "bg-[#c20000] text-white hover:bg-[#990000] active:bg-[#d2224d]",
-        disabled: "opacity-50 cursor-not-allowed",
+        delete:
+          "bg-[#c20000] text-white hover:bg-[#990000] active:bg-[#d2224d]",
+        disabled:
+          "opacity-50 cursor-not-allowed active:bg-transpared border-2 border-inputBorder",
         loading: "opacity-75",
       },
       size: {
-        default: "h-10 px-5",
+        default: "px-5 py-3",
         sm: "h-8 px-4",
         lg: "h-12 px-6",
       },
-      
     },
     defaultVariants: {
       variant: "default",
       size: "default",
     },
   }
-)
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -40,9 +42,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       />
-    )
+    );
   }
-)
-Button.displayName = "Button"
+);
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

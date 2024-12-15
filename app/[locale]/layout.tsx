@@ -56,14 +56,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          nunito.className
-        )}
-      >
+      <body className={cn("bg-background antialiased", nunito.className)}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="system">
             <ThemeHandler />
             {children}
             <Snowfall />

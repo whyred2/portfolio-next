@@ -5,23 +5,14 @@
 @layer base {
   :root {
     /* Основные переменные для светлой темы */
-    --background-1: hsl(0, 0%, 100%);
-    --background-2: hsl(0, 0%, 90%);
-    --background-3: hsl(0, 0%, 70%);
+    --background-2: hsl(0, 0%, 95%);
+    --background-3: hsl(0, 0%, 85%);
+    --background-4: hsl(0, 0%, 80%);
 
     --base-skeleton-color: #8662f3;
     --highlight-skeleton-color: #ac91ffb2;
 
-    --accent-color: #8662f3;
-    --accent-color-hover: #8860ffb2;
-
-    --secondary-color: rgba(0, 0, 0, 0.05);
-    --secondary-color-hover: rgba(0, 0, 0, 0.20);
-
-    --active-color: #d2224d;
-
-    --text: #000000;
-    --text-accent-color: #655f76;
+    --text-accent-color: #2c2c2c;
 
     --text-color-white: #fff;
     --text-span: #7e7b88;
@@ -29,65 +20,56 @@
     --link-color: #655f76;
     --link-color-hover: #a59bc2;
 
-    --error-color: hsl(0, 70%, 50%);
+
+    --background-1: #f9f9fc; /* Потом сменить на "background" */
+    --header-background: #ffffffd5;
+    --text: #202020;
+    --text-subtitle: #5f5f5f;
+
+    --border-color: hsla(0, 0%, 100%, 0.6);
+    --input-color: rgba(0, 0, 0, 0.05);
+    --input-border-color: rgba(0, 0, 0, 0.3);
+
+    --accent-color: #8662f3;
+    --accent-color-hover: #6b3ee0;
+    --secondary-color: rgba(0, 0, 0, 0.05);
+    --secondary-color-hover: rgba(0, 0, 0, 0.20);
+
+    --active-color: #d2224d;
+
+    --succes-color: #34d399;
+    --error-color: #f87171;
+    --warning-color: #fbbf24;
+    --info-color: #3b82f6;
 
     --radius: 1rem;
   }
 
   .dark {
     /* Темная тема */
-    --background-1: #24222a;
-    --background-2: #2e2c35;
-    --background-3: #35333e;
+    --background-1: hsl(255, 11%, 15%);
+    --background-2: hsl(253, 9%, 19%);
+    --background-3: hsl(251, 10%, 22%);
+    --background-4: hsl(249, 10%, 25%);
 
     --secondary-color: rgba(255, 255, 255, 0.05);
     --secondary-color-hover: rgba(255, 255, 255, 0.20);
 
     --text: #ffffff;
-  }
-
-  [class="new-year"] {
-    /* Новогодняя тема */
-    --background-1: hsl(0, 0%, 0%);
-    --background-2: hsl(223, 20%, 10%);
-    --background-3: hsl(223, 20%, 12%);
-
-    --base-skeleton-color: #287233
-    --highlight-skeleton-color: #34a853;
-
-    --accent-color: #34a853;
-    --accent-color-hover: #3dc15b;
-
-    --secondary-color: rgba(255, 255, 255, 0.05);
-    --secondary-color-hover: rgba(255, 255, 255, 0.20);
-
-    --active-color: #d2224d;
-
-    --text-accent-color: #e0e0e0;
-    --text-color-white: #fff;
-    --text-span: #979797;
-
-    --link-color: #34a853;
-    --link-color-hover: #3dc15b;
-
-    --text: #ffffff;
-
-    --background-xmas: url('/images/bg-xmas-snowflake.png'), url('/images/bg-xmas.jpg');
+    --text-accent-color: #c40c0c;
   }
 }
 
 @layer base {
-  html.new-year body {
-    @apply bg-bgXmas;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
   body {
-    @apply bg-background1 text-foreground text-size4;
+    @apply bg-background text-text text-size4;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
+
 
 @layer components {
   .icon-wrapper .moon {
@@ -98,11 +80,6 @@
     @apply translate-y-0;
   }
 
-  .icon-wrapper.new-year .moon {
-    @apply translate-y-[-60px];
-  }
-  
-
 
   .icon-wrapper.light .sun {
     @apply translate-y-0;
@@ -110,12 +87,7 @@
 
   .icon-wrapper.dark .sun {
     @apply translate-y-[-60px];
-  }
-
-  .icon-wrapper.new-year .sun {
-    @apply translate-y-[-60px];
-  }
-  
+  } 
 
 
   .icon-wrapper.dark .tree {
@@ -126,7 +98,43 @@
     @apply translate-y-[60px];
   }
 
-  .icon-wrapper.new-year .tree {
-    @apply translate-y-[0px];
+  .btn-outline {
+    @apply border-2 border-dashed border-gray-500 text-gray-700 font-medium px-5 py-3 rounded-lg hover:border-solid hover:scale-105 transition-all duration-300;
   }
+  
+  .logo { width: 100px; height: auto; }
+
+  .logo path,
+.logo rect {
+  stroke-dasharray: 200; /* Общая длина пути */
+  stroke-dashoffset: 200; /* Начальный оффсет */
+  animation: draw 1s ease-in-out forwards;
+}
+
+.logo path:nth-child(1),
+.logo rect:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.logo path:nth-child(2),
+.logo rect:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.logo path:nth-child(3),
+.logo rect:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.logo path:nth-child(4),
+.logo rect:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* Анимация к полному заполнению пути */
+  }
+}
+
 }

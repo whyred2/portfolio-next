@@ -10,10 +10,7 @@ export interface NavigationItemProps
 function HeaderItem({ className, children, ...props }: NavigationItemProps) {
   return (
     <div
-      className={cn(
-        "flex justify-center items-center p-[10px] rounded-full bg-background2",
-        className
-      )}
+      className={cn("flex justify-center items-center", className)}
       {...props}
     >
       {children}
@@ -29,7 +26,7 @@ function NavigationItem({
   return (
     <div
       className={cn(
-        "bg-secondary px-5 h-[40px] rounded-full overflow-hidden select-none",
+        "bg-secondary px-5 py-1 rounded-full overflow-hidden select-none",
         "flex justify-center items-center cursor-pointer",
         "transition-bg duration-300 hover:bg-secondaryHover active:bg-active active:transition-none",
         className

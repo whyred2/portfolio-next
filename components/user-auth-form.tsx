@@ -103,9 +103,9 @@ export function UserAuthForm({ isSignUp }: AuthFormProps) {
     <>
       <Button onClick={() => signIn("google")}>{t("google-btn")}</Button>
       <div className="relative">
-        <div className="h-px bg-textSpan" />
+        <div className="h-px bg-inputBorder" />
         <span
-          className="bg-background2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+1px)] text-center
+          className="bg-background absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+1px)] text-center
           px-4 py-0.5 text-base leading-none"
         >
           {t("or")}

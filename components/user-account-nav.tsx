@@ -92,6 +92,13 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           <DropdownMenuSubContent>
             <DropdownMenuRadioGroup value={isTheme} onValueChange={setIsTheme}>
               <DropdownMenuRadioItem
+                value="system"
+                onClick={() => setTheme("system")}
+              >
+                <Icons.sunMoon className="min-w-[24px]" />
+                {t("system")}
+              </DropdownMenuRadioItem>
+              <DropdownMenuRadioItem
                 value="light"
                 onClick={() => setTheme("light")}
               >
@@ -104,13 +111,6 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
               >
                 <Icons.moon className="min-w-[24px]" />
                 {t("dark")}
-              </DropdownMenuRadioItem>
-              <DropdownMenuRadioItem
-                value="new-year"
-                onClick={() => setTheme("new-year")}
-              >
-                <Icons.tree className="min-w-[24px]" />
-                {t("new-year")}
               </DropdownMenuRadioItem>
             </DropdownMenuRadioGroup>
           </DropdownMenuSubContent>

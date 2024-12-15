@@ -2,6 +2,8 @@ import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  ArrowUp,
+  ArrowDown,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -13,6 +15,7 @@ import {
   Image,
   Laptop,
   Loader2,
+  Mail,
   Moon,
   MoreVertical,
   Pizza,
@@ -28,8 +31,13 @@ import {
   TreePine,
   SunMoon,
   Music2,
+  Asterisk,
+  Square,
   type Icon as LucideIcon,
 } from "lucide-react";
+
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 
 export type Icon = LucideIcon;
 
@@ -42,6 +50,7 @@ export const Icons = {
   trash: Trash,
   post: FileText,
   page: File,
+  mail: Mail,
   media: Image,
   settings: Settings,
   billing: CreditCard,
@@ -52,6 +61,8 @@ export const Icons = {
   userX: UserX,
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
+  arrowUp: ArrowUp,
+  arrowDown: ArrowDown,
   help: HelpCircle,
   pizza: Pizza,
   sun: Sun,
@@ -63,4 +74,10 @@ export const Icons = {
   sunMoon: SunMoon,
   tree: TreePine,
   music2: Music2,
+  asterisk: Asterisk,
+  square: Square,
+
+  telegram: FaTelegramPlane,
+  twitter: FaXTwitter,
+  insta: FaInstagram,
 };

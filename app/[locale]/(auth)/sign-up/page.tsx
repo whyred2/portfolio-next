@@ -38,12 +38,12 @@ export default function SignUp() {
         <Icons.arrowLeft size={32} />
         <span>{authTranslations("back")}</span>
       </Link>
-      <div className="bg-background2 flex flex-col gap-8 rounded-2xl p-5 w-[30rem] z-10">
+      <div className="border border-border flex flex-col gap-8 rounded-lg p-5 w-[30rem] z-10 backdrop-blur shadow-lg">
         <header className="flex flex-col justify-center gap-2">
           <h1 className="text-center text-xl font-semibold">
             {signUpTranslations("form-title")}
           </h1>
-          <p className="text-textSpan text-center text-base font-normal">
+          <p className="text-textSubtitle text-center text-base font-normal">
             {signUpTranslations("form-description")}
           </p>
         </header>
@@ -51,7 +51,7 @@ export default function SignUp() {
         <UserAuthForm isSignUp={true} />
       </div>
 
-      <div className="mt-[-1.5rem] pt-[1.5rem] bg-background3 text-size3 rounded-2xl w-[30rem]">
+      <div className="mt-[-1.5rem] pt-[1.5rem] text-size3 rounded-2xl w-[30rem]">
         <div className={`flex items-center justify-center gap-2 px-4 py-4`}>
           <span>{signUpTranslations("no-account")}</span>
           <Link
