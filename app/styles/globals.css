@@ -45,15 +45,23 @@
 
     --secondary-color: rgba(255, 255, 255, 0.05);
     --secondary-color-hover: rgba(255, 255, 255, 0.20);
-
   }
 }
 
 @layer base {
+  * {
+    cursor: none !important;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-text text-size4;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
   body::-webkit-scrollbar {
     display: none;
   }
@@ -97,9 +105,5 @@
   
   .icon-wrapper.light .tree {
     @apply translate-y-[60px];
-  }
-
-  .btn-outline {
-    @apply border-2 border-dashed border-gray-500 text-gray-700 font-medium px-5 py-3 rounded-lg hover:border-solid hover:scale-105 transition-all duration-300;
   }
 }

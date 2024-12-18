@@ -6,6 +6,7 @@ import { HeaderItem, NavigationItem } from "@/components/ui/header-items";
 import { ThemeSwitcher } from "./theme-switcher";
 import LanguageSwitcher from "./language-switcher";
 import Logo from "@/components/logo";
+import DelayedLink from "@/components/delayed-link";
 
 interface MainNavProps {
   children?: React.ReactNode;
@@ -26,7 +27,9 @@ export function Header({ children, items }: MainNavProps) {
         {items?.length ? (
           <HeaderItem className="gap-3">
             {items?.map((item, index) => (
-              <NavigationItem key={index}>{t(item.titleKey)}</NavigationItem>
+              <DelayedLink key={index} href={item.href}>
+                <NavigationItem>{t(item.titleKey)}</NavigationItem>
+              </DelayedLink>
             ))}
           </HeaderItem>
         ) : null}

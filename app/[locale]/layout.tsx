@@ -10,6 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "../styles/globals.css";
 import { ThemeHandler } from "@/components/theme-handler";
 import Snowfall from "@/components/snowfall";
+import Cursor from "@/components/cursor";
 
 const nunito = Nunito({
   weight: "700",
@@ -63,6 +64,7 @@ export default async function RootLayout({
             {children}
             <Snowfall />
             <Toaster />
+            <Cursor />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

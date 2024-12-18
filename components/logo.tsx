@@ -32,13 +32,13 @@ export default function Logo({ className }: LogoProps) {
       gsap.fromTo(
         cls2,
         {
-          stroke: "#6b3ee0",
+          stroke: "#289970",
           strokeDasharray: 200,
           strokeDashoffset: 200,
         },
         {
-          stroke: "#6b3ee0",
-          fill: "#8662f3",
+          stroke: "#289970",
+          fill: "#35bb8a",
           strokeDashoffset: 0,
           duration: 1,
           stagger: 0.3,
