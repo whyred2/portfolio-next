@@ -13,7 +13,7 @@
     --border-color: hsla(0, 0%, 100%, 0.6);
 
     --input-color: rgba(0, 0, 0, 0.05);
-    --input-border-color: rgba(0, 0, 0, 0.3);
+    --input-border-color: rgb(38 38 38 / 0.2);
 
     --accent-color: #8662f3;
     --accent-color-hover: #6b3ee0;
@@ -41,7 +41,7 @@
     --border-color: hsla(0, 0%, 100%, 0.1);
 
     --input-color: rgba(255, 255, 255, 0.05);
-    --input-border-color: rgba(255, 255, 255, 0.3);
+    --input-border-color: rgb(229 229 229 / 0.2);
 
     --secondary-color: rgba(255, 255, 255, 0.05);
     --secondary-color-hover: rgba(255, 255, 255, 0.20);
@@ -105,5 +105,10 @@
   
   .icon-wrapper.light .tree {
     @apply translate-y-[60px];
+  }
+  
+  ::selection {
+    background: var(--accent-color); 
+    color: #ffffff !important;
   }
 }

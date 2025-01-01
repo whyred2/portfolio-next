@@ -15,6 +15,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           "disabled:opacity-50 disabled:cursor-not-allowed",
           className
         )}
+        style={{
+          scrollbarWidth: "none",
+        }}
         ref={ref}
         {...props}
       />

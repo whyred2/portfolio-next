@@ -77,6 +77,7 @@ export const authOptions: NextAuthOptions = {
             session.user.name = token.name
             session.user.email = token.email
             session.user.image = token.picture
+            session.user.role = token.role
             return session;
         },
         async jwt({ token, user }) {
@@ -89,11 +90,16 @@ export const authOptions: NextAuthOptions = {
                 return token;
             }
 
+            if (!dbUser) {
+                return token;
+            }
+            
             return {
                 id: dbUser.id,
                 name: dbUser.name,
                 email: dbUser.email,
                 picture: dbUser.image,
+                role: dbUser.role,
             };
         },
     },

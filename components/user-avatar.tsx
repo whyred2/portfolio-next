@@ -9,7 +9,7 @@ interface UserAvatarProps {
 
 export function UserAvatar({ user }: UserAvatarProps) {
   return (
-    <div className="flex h-10 w-10 overflow-hidden rounded-full bg-secondary hover:bg-secondaryHover transition-bg duration-300">
+    <div className="flex flex-none h-10 w-10 overflow-hidden rounded-full bg-secondary hover:bg-secondaryHover transition-bg duration-300">
       {user.image ? (
         <Image alt="avatar" src={user.image} width={40} height={40} />
       ) : (

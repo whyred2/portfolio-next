@@ -17,6 +17,11 @@ model User {
   status    String   @default("active")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  commentsQuestions CommentsQuestions[]
+  commentsWishes    CommentsWishes[]
+  commentsReviews   CommentsReviews[]
+  complains         Complains[]
 }
 
 enum Role {
@@ -30,4 +35,45 @@ model Mail {
   email     String
   message   String   @db.Text
   createdAt DateTime @default(now())
+}
+
+model CommentsQuestions {
+  id        Int      @id @default(autoincrement())
+  userId    Int?
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model CommentsWishes {
+  id        Int      @id @default(autoincrement())
+  userId    Int?
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model CommentsReviews {
+  id        Int      @id @default(autoincrement())
+  userId    Int?
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model Complains {
+  id        Int      @id @default(autoincrement())
+  userId    Int?     
+  commentId Int?
+  type      String
+  reason    String
+  createdAt DateTime @default(now())
+
+  user      User?    @relation(fields: [userId], references: [id])
 }

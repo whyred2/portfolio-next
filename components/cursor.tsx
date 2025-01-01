@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 export default function Cursor() {
   const innerCursorRef = useRef<HTMLDivElement>(null);
+  const innerCursorBackRef = useRef<HTMLDivElement>(null);
   const innerCursorDotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -92,6 +93,7 @@ export default function Cursor() {
         className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 border-2 border-accent bg-neutral-500/20 transition-[width,height,border-radius] duration-300"
         ref={innerCursorRef}
       />
+
       <div
         className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 bg-active transition-[width,height,border-radius] duration-300"
         ref={innerCursorDotRef}

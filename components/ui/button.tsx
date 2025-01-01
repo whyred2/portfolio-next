@@ -10,7 +10,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-accent text-white hover:bg-accentHover hover:border-accentHover border-accent",
-        secondary: "bg-secondary hover:bg-secondaryHover",
+        secondary:
+          "bg-white/5 border-white/20 hover:bg-white/20 active:text-white",
         delete:
           "bg-red-500 text-white hover:bg-red-800 border-red-500 hover:border-red-800",
         disabled:
@@ -19,8 +20,9 @@ const buttonVariants = cva(
       },
       size: {
         default: "px-5 py-3",
-        sm: "h-8 px-4",
-        lg: "h-12 px-6",
+        xs: "px-4 py-1",
+        sm: "px-4 py-2",
+        lg: "px-6 py-4",
       },
     },
     defaultVariants: {

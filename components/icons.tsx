@@ -35,6 +35,10 @@ import {
   Square,
   Eye,
   EyeOffIcon,
+  SendHorizontal,
+  Pencil,
+  Eraser,
+  Flag,
   type Icon as LucideIcon,
 } from "lucide-react";
 
@@ -80,6 +84,10 @@ export const Icons = {
   square: Square,
   eye: Eye,
   eyeOff: EyeOffIcon,
+  sendHorizontal: SendHorizontal,
+  pencil: Pencil,
+  eraser: Eraser,
+  flag: Flag,
 
   telegram: FaTelegramPlane,
   twitter: FaXTwitter,
