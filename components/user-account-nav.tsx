@@ -84,7 +84,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
             <Icons.paintRoller />
             {t("themes")}
           </DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
+          <DropdownMenuSubContent className="z-[50]">
             <DropdownMenuRadioGroup value={isTheme} onValueChange={setIsTheme}>
               <DropdownMenuRadioItem
                 value="system"
