@@ -29,6 +29,8 @@
     --info-color: #3b82f6;
 
     --radius: 1rem;
+
+    --background-grid: url("../../public/images/grid.svg");
   }
 
   .dark {

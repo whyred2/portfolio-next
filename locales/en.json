@@ -3,7 +3,7 @@
         "NavItem": {
             "home": "Home",
             "about": "About Me",
-            "portfolio": "Portfolio",
+            "works": "Portfolio",
             "comments": "Comments"
         },
         "UserMenu": {

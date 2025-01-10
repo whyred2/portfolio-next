@@ -28,7 +28,7 @@ export default function CommentsPage() {
     null
   );
   const [scrollMask, setScrollMask] = React.useState(
-    "linear-gradient(black 90%, transparent)"
+    "linear-gradient(black 85%, transparent)"
   );
 
   const [comments, setComments] = React.useState<{ [key: string]: Comment[] }>(
@@ -112,18 +112,18 @@ export default function CommentsPage() {
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-    const isTop = scrollTop <= 0;
+    const isTop = scrollTop <= 50;
     const isBottom = scrollTop + clientHeight >= scrollHeight;
 
     if (isTop && isBottom) {
       setScrollMask("none");
     } else if (isTop) {
-      setScrollMask("linear-gradient(black 90%, transparent)");
+      setScrollMask("linear-gradient(black 85%, transparent)");
     } else if (isBottom) {
-      setScrollMask("linear-gradient(transparent, black 10%)");
+      setScrollMask("linear-gradient(transparent, black 15%)");
     } else {
       setScrollMask(
-        "linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%)"
+        "linear-gradient(transparent 0%, black 15%, black 85%, transparent 100%)"
       );
     }
   };
@@ -234,9 +234,9 @@ export default function CommentsPage() {
         </CommentSection>
       ))}
       {isComplaining && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center">
-          <div className="fixed inset-0 backdrop-blur-sm" />
-          <div className="bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-xl p-5 max-w-[400px] rounded-lg">
+        <>
+          <div className="fixed z-50 inset-0 backdrop-blur-sm animate-overlayShow" />
+          <div className="-translate-x-1/2 -translate-y-1/2 fixed z-50 left-1/2 top-1/2 bg-white/60 dark:bg-black/60 backdrop-blur-xl shadow-xl p-5 max-w-[400px] rounded-lg animate-contentShow">
             <div className="flex justify-between items-center">
               <div className="text-2xl">Пожаловаться</div>
               <button
@@ -299,7 +299,7 @@ export default function CommentsPage() {
               Отправить
             </button>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

@@ -28,7 +28,7 @@ export const TransitionProvider = ({
 
     setTimeout(() => {
       setIsTransitioning(false);
-    }, 500);
+    }, 600);
   };
 
   return (

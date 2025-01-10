@@ -10,6 +10,8 @@ import * as React from "react";
 import PageWrapper from "@/components/page-wrapper";
 import { TransitionProvider } from "@/contexts/transition-context";
 
+import "@/app/styles/globals.css";
+
 interface PagesLayoutProps {
   children?: React.ReactNode;
 }
@@ -35,7 +37,7 @@ export default async function PagesLayout({ children }: PagesLayoutProps) {
                 href="/sign-in"
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "py-1 rounded-md"
+                  "py-1 rounded-md border-none"
                 )}
               >
                 Войти

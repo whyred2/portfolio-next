@@ -3,7 +3,7 @@
         "NavItem": {
             "home": "家",
             "about": "私について",
-            "portfolio": "ポートフォリオ",
+            "works": "ポートフォリオ",
             "comments": "お問い合わせ"
         },
         "UserMenu": {

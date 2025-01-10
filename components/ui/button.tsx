@@ -4,7 +4,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "flex items-center justify-center rounded-lg duration-300 select-none active:bg-active active:duration-0 border-2 active:border-active",
+  "flex items-center justify-center gap-3 rounded-lg duration-300 select-none active:bg-active active:duration-0 border-2 active:border-active",
   {
     variants: {
       variant: {
@@ -24,10 +24,17 @@ const buttonVariants = cva(
         sm: "px-4 py-2",
         lg: "px-6 py-4",
       },
+      radius: {
+        lg: "rounded-lg",
+        md: "rounded-md",
+        sm: "rounded-sm",
+        full: "rounded-full",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      radius: "lg",
     },
   }
 );

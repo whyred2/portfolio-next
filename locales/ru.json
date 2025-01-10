@@ -3,7 +3,7 @@
         "NavItem": {
             "home": "Главная",
             "about": "Обо мне",
-            "portfolio": "Работы",
+            "works": "Проекты",
             "comments": "Комментарии"
         },
         "UserMenu": {

@@ -1,4 +1,7 @@
+"use client";
+
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 import { MainNavItem } from "@/types";
 import { HeaderItem, NavigationItem } from "@/components/ui/header-items";
@@ -15,6 +18,8 @@ interface MainNavProps {
 
 export function Header({ children, items }: MainNavProps) {
   const t = useTranslations("Header.NavItem");
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
 
   return (
     <header className="fixed top-0 left-0 w-full h-16 bg-headerBg backdrop-blur shadow flex items-center justify-between px-5 z-50">
@@ -26,11 +31,24 @@ export function Header({ children, items }: MainNavProps) {
       <div className="hidden md:flex space-x-5">
         {items?.length ? (
           <HeaderItem className="gap-3">
-            {items?.map((item, index) => (
-              <DelayedLink key={index} href={item.href}>
-                <NavigationItem>{t(item.titleKey)}</NavigationItem>
-              </DelayedLink>
-            ))}
+            {items?.map((item, index) => {
+              const fullPath = `/${locale}${item.href}`;
+              let isActive;
+              if (item.href === "/") {
+                isActive =
+                  pathname === `/${locale}` || pathname === `/${locale}/`;
+              } else {
+                isActive = pathname.startsWith(fullPath);
+              }
+
+              return (
+                <DelayedLink key={index} href={item.href}>
+                  <NavigationItem isActive={isActive}>
+                    {t(item.titleKey)}
+                  </NavigationItem>
+                </DelayedLink>
+              );
+            })}
           </HeaderItem>
         ) : null}
       </div>

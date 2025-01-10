@@ -38,3 +38,24 @@ export interface CommentSection {
 export interface CommentsConfig {
     comments: CommentSection[];
 }
+
+//----------------------------------------------
+
+export interface WorksConfig {
+    works: WorksItem[]
+}
+
+export interface WorksItem {
+    id: number;
+    title: string;
+    description: string;
+    features: string[];
+    libraries: string[];
+    logoImage: string;
+    logoWidth: number;
+    video?: string;
+    demoLink?: string;
+    gitHubLink?: string;
+    youtubeLink?: string;
+    href: string;
+}

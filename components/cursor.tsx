@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 
 export default function Cursor() {
   const innerCursorRef = useRef<HTMLDivElement>(null);
-  const innerCursorBackRef = useRef<HTMLDivElement>(null);
   const innerCursorDotRef = useRef<HTMLDivElement>(null);
+  const hideCursorTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let x = 0;
@@ -38,6 +38,22 @@ export default function Cursor() {
     const mouseMoveHandler = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+
+      if (hideCursorTimeout.current) {
+        clearTimeout(hideCursorTimeout.current);
+      }
+
+      if (innerCursorRef.current && innerCursorDotRef.current) {
+        innerCursorRef.current.style.opacity = `1`;
+        innerCursorDotRef.current.style.opacity = `1`;
+      }
+
+      hideCursorTimeout.current = setTimeout(() => {
+        if (innerCursorRef.current && innerCursorDotRef.current) {
+          innerCursorRef.current.style.opacity = `0`;
+          innerCursorDotRef.current.style.opacity = `0`;
+        }
+      }, 1500);
     };
 
     document.addEventListener("mousemove", mouseMoveHandler);
@@ -55,11 +71,12 @@ export default function Cursor() {
 
         innerCursorDotRef.current.style.width = `12px`;
         innerCursorDotRef.current.style.height = `12px`;
-        innerCursorRef.current.style.height = `30px`;
         innerCursorRef.current.style.width = `30px`;
+        innerCursorRef.current.style.height = `30px`;
 
         innerCursorDotRef.current.style.borderRadius = `50%`;
         innerCursorRef.current.style.borderRadius = `50%`;
+
         if (isHover) {
           innerCursorDotRef.current.style.width = `24px`;
           innerCursorDotRef.current.style.height = `24px`;
@@ -83,19 +100,21 @@ export default function Cursor() {
 
     return () => {
       document.removeEventListener("mousemove", mouseMoveHandler);
-      document.addEventListener("mousemove", mouseOverHandler);
+      document.removeEventListener("mousemove", mouseOverHandler);
+      if (hideCursorTimeout.current) {
+        clearTimeout(hideCursorTimeout.current);
+      }
     };
   }, []);
 
   return (
     <div className="pointer-events-none">
       <div
-        className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 border-2 border-accent bg-neutral-500/20 transition-[width,height,border-radius] duration-300"
+        className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 border-2 border-accent bg-neutral-500/20 transition-[width,height,border-radius,opacity] duration-300"
         ref={innerCursorRef}
       />
-
       <div
-        className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 bg-active transition-[width,height,border-radius] duration-300"
+        className="fixed z-[10000] -translate-x-2/4 -translate-y-2/4 bg-active transition-[width,height,border-radius,opacity] duration-300"
         ref={innerCursorDotRef}
       />
     </div>

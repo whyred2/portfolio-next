@@ -11,8 +11,8 @@ export const navigationConfig: NavigationConfig = {
       href: "/about",
     },
     {
-      titleKey: "portfolio",
-      href: "/portfolio",
+      titleKey: "works",
+      href: "/works",
     },
     {
       titleKey: "comments",

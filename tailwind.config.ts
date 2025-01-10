@@ -19,12 +19,12 @@ export default {
         "2xl": "1300px",
       },
     },
-    backgroundImage: {
-      'bgXmas': "var(--background-xmas)",
-      'grid': "var(--background-grid)",
-      'gradient': 'linear-gradient(45deg, #3b82f6, #d2224d)',
-    },
     extend: {
+      backgroundImage: {
+        'bgXmas': "var(--background-xmas)",
+        'grid': "var(--background-grid)",
+        'gradient': 'linear-gradient(45deg, #3b82f6, #d2224d)',
+      },
       colors: {
         background: "var(--background)",
         headerBg: "var(--header-background)",
@@ -78,6 +78,12 @@ export default {
         gradient: 'gradient 8s ease infinite',
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+
+        hide: "hide 100ms ease-in",
+        slideIn: "slideIn .5s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideOut: "slideOut .5s cubic-bezier(0.16, 1, 0.3, 1)",
+
+        showIn: "showIn 150ms ease-in-out",
       },
 
       keyframes: {
@@ -86,17 +92,50 @@ export default {
           '50%': {backgroundPosition: '100% 50%' },
           '100%': {backgroundPosition: '0% 50%' },
         },
+
         overlayShow: {
-					from: { opacity: "0" },
-					to: { opacity: "1" },
-				},
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
         contentShow: {
-					from: {
-						opacity: "0",
-						transform: "translate(-50%, -48%) scale(0.96)",
-					},
-					to: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
-				},
+          from: {
+            opacity: "0",
+            transform: "translate(-50%, -48%) scale(0.96)",
+          },
+          to: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+        },
+
+        hide: {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        slideIn: {
+          from: {
+            transform: "translateX(calc(100%))",
+          },
+          to: { transform: "translateX(0)" },
+        },
+        slideOut: {
+          from: {
+            opacity: "0",
+            transform: "translateX(-20%)",
+          },
+          to: { 
+            opacity: "1",
+            transform: "translateX(0)" 
+          },
+        },
+
+        showIn: {
+          from: {
+            opacity: "0",
+            transform: "translateY(calc(10%))",
+          },
+          to: { 
+            opacity: "1", 
+            transform: "translateY(0)" 
+          },
+        }
       }
     },
   },

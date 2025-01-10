@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 84.3258666992 95.8240966797">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#_Безымянный_градиент_219-2);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+
+      .cls-2 {
+        stroke: url(#_Безымянный_градиент_219-3);
+      }
+
+      .cls-3 {
+        stroke: url(#_Безымянный_градиент_219);
+      }
+    </style>
+    <linearGradient id="_Безымянный_градиент_219" data-name="Безымянный градиент 219" x1="-65.5063913156" y1="-66.9284658677" x2="30.3176889175" y2="-66.9284658677" gradientTransform="translate(90.5099478013 30.3177053641) rotate(-90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#054e3b"/>
+      <stop offset=".1534111461" stop-color="#11674c"/>
+      <stop offset=".3806019757" stop-color="#1f8662"/>
+      <stop offset=".6018316467" stop-color="#2a9c72"/>
+      <stop offset=".8121731843" stop-color="#30aa7b"/>
+      <stop offset="1" stop-color="#33af7f"/>
+    </linearGradient>
+    <linearGradient id="_Безымянный_градиент_219-2" data-name="Безымянный градиент 219" x1="-65.5063819995" y1="-48.3470144517" x2="30.3176982336" y2="-48.3470144517" xlink:href="#_Безымянный_градиент_219"/>
+    <linearGradient id="_Безымянный_градиент_219-3" data-name="Безымянный градиент 219" y1="-29.7655325181" y2="-29.7655325181" xlink:href="#_Безымянный_градиент_219"/>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <polygon class="cls-3" points="5 26.4559936523 5 69.3680419922 42.1629638672 90.8240966797 42.1629638672 47.9120483398 5 26.4559936523"/>
+      <polygon class="cls-1" points="79.3258666992 26.4559936523 42.1629638672 5 5 26.4559936523 42.1629638672 47.9120483398 79.3258666992 26.4559936523"/>
+      <polygon class="cls-2" points="42.1629638672 47.9120483398 42.1629638672 90.8240966797 79.3258666992 69.3680419922 79.3258666992 26.4559936523 42.1629638672 47.9120483398"/>
+    </g>
+  </g>
+</svg>
